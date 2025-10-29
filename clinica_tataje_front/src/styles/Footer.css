@@ -1,0 +1,27 @@
+footer {
+  background-color: #000;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+footer .text-warning {
+  color: #ff7f00 !important;
+}
+
+footer .list-unstyled li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .list-unstyled li a:hover {
+  color: #ff7f00;
+}
+
+footer .bi {
+  transition: transform 0.3s ease;
+}
+
+footer .bi:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,160 @@
+/* Contenedor de Carrusel */
+.carousel-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+/* Estilo para cada tarjeta de servicio */
+.service-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Información dentro de la tarjeta */
+.service-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.service-info h5 {
+  color: #ff7f00;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.service-info p {
+  color: #555;
+  font-size: 14px;
+}
+
+.service-info .btn {
+  background-color: #ff7f00;
+  border-color: #ff7f00;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.service-info .btn:hover {
+  background-color: #e86c00;
+  border-color: #e86c00;
+}
+
+/* Sección de Llamada a la Acción (CTA) */
+.cta-section {
+  background-color: #ff7f00;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.cta-section .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.cta-section .btn:hover {
+  background-color: #333;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .carousel-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .cta-section {
+    padding: 20px;
+  }
+}
+
+
+/* Estilo para la sección de Beneficios */
+.benefit-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card i {
+  color: #ff7f00;
+  font-size: 3rem;
+}
+
+.benefit-card h5 {
+  color: #ff7f00;
+  margin-top: 10px;
+}
+
+.benefit-card p {
+  color: #555;
+}
+
+/* Estilos de la sección de Preguntas Frecuentes */
+.accordion-button {
+  background-color: #ff7f00;
+  color: #fff;
+  font-weight: bold;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e86c00;
+}
+
+/* Estilo del iframe del mapa */
+iframe {
+  border: none;
+  border-radius: 10px;
+}
+
+/* Estilos para la sección CTA */
+.cta-section {
+  background-color: #ff7f00;
+  color: #fff;
+  padding: 40px 0;
+}
+
+.cta-section .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.cta-section .btn:hover {
+  background-color: #333;
+}

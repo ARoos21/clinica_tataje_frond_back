@@ -1,0 +1,142 @@
+.registro-paciente-container {
+  display: flex;
+  min-height: 95vh;
+  width: 95vw;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.registro-paciente-imagen {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: #fff2e6;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0;
+}
+
+.registro-paciente-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.registro-paciente-formulario {
+  flex: 1;
+  padding: 3rem 4rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registro-paciente-formulario h2 {
+  color: #1e3144;
+  margin-bottom: 1.5rem;
+}
+
+.registro-paciente-campo-dni {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.registro-paciente-campo-dni label {
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: #1e3144;
+}
+
+.registro-paciente-campo-dni input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  max-width: 250px;
+}
+
+.registro-paciente-formulario-campos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem;
+}
+
+.registro-paciente-campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.registro-paciente-campo label {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  color: #1e3144;
+}
+
+.registro-paciente-campo input[type="text"],
+.registro-paciente-campo input[type="date"],
+.registro-paciente-campo input[type="password"] {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.registro-paciente-mensaje {
+  grid-column: 1 / span 2;
+  margin-top: 0.5rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.registro-paciente-mensaje.error {
+  background-color: #ffe6e6;
+  color: #cc0000;
+}
+
+.registro-paciente-mensaje.exito {
+  background-color: #e6fff2;
+  color: #008040;
+}
+
+.registro-paciente-botones {
+  grid-column: 1 / span 2;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.registro-paciente-botones button {
+  padding: 0.6rem 1.5rem;
+  background-color: #1e3144;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.registro-paciente-botones button:hover {
+  background-color: #162635;
+}
+
+.registro-paciente-btn-link {
+  color: #1e3144;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

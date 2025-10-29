@@ -1,0 +1,33 @@
+/* Estilos personalizados para la página de Staff Médico */
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-bottom: 2px solid #ff7f00;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff7f00;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.container h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.container p {
+  font-size: 18px;
+  color: #555;
+}

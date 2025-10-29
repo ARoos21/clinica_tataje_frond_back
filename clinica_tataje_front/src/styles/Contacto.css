@@ -1,0 +1,146 @@
+/* Sección de introducción con fondo de imagen y gradiente */
+.hero-section {
+  background-image: url('https://i.pinimg.com/1200x/8b/b6/80/8bb6800d6c5d3ffe2bbc01901555bf41.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+}
+
+/* Superposición con gradiente oscuro */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);  /* Fondo oscuro con opacidad */
+  z-index: 1;
+}
+
+.hero-section h2, .hero-section p {
+  z-index: 2;
+  position: relative;
+}
+
+/* Alinear el texto en el centro */
+.hero-section h2 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Información de contacto */
+.contact-info {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-info li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.contact-list li strong {
+  color: #ff7f00;
+}
+
+/* Formulario de contacto */
+.contact-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-control {
+  border-radius: 25px;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.contact-form .form-control:focus {
+  border-color: #ff7f00;
+  box-shadow: 0 0 5px rgba(255, 127, 0, 0.5);
+}
+
+.contact-form button {
+  background-color: #ff7f00;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+}
+
+.contact-form button:hover {
+  background-color: #e86c00;
+}
+
+/* Imagenes de la clínica */
+.contact-image img, .img-fluid {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mapa de ubicación */
+iframe {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sección de CTA */
+.cta-section {
+  background-color: #ff7f00;
+  color: white;
+  padding: 40px 0;
+  border-radius: 15px;
+}
+
+.cta-section .btn {
+  background-color: #000;
+  color: white;
+  font-size: 18px;
+  padding: 12px 40px;
+  border-radius: 25px;
+}
+
+.cta-section .btn:hover {
+  background-color: #333;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 300px;
+  }
+
+  .contact-info {
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .cta-section .btn {
+    padding: 10px 20px;
+  }
+}

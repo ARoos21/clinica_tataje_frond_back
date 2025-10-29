@@ -1,0 +1,148 @@
+.carousel-item {
+  height: auto;
+  position: relative;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  bottom: 10px;
+}
+
+.carousel-caption h3,
+.carousel-caption p {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-caption p {
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Reubicar los botones de navegación */
+/* Alinea las flechas al centro vertical */
+/* Asegura que el contenedor tenga altura y posición relativa */
+.carousel {
+  position: relative;
+  overflow: visible;
+}
+
+/* Flechas centradas verticalmente */
+.carousel .carousel-control-prev,
+.carousel .carousel-control-next {
+  top: 50%;
+  transform: translateY(-60%);
+  width: 2rem;
+  height: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 40;
+}
+
+/* Iconos flechas blancas */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* Posición lateral */
+.carousel .carousel-control-prev {
+  left: -2rem;
+}
+
+.carousel .carousel-control-next {
+  right: -2rem;
+}
+
+
+
+.carousel .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.carousel .col-md-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+
+.servicio-card {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  color: #000;
+  transition: all 0.3s ease;
+  transform: scale(0.95); /* tamaño reducido inicialmente */
+}
+
+.servicio-card:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05); /* agranda al pasar el mouse */
+}
+
+.servicio-card:hover i {
+  color: #fff;
+}
+
+.servicio-card .btn {
+  transition: all 0.3s ease;
+}
+
+.servicio-card:hover .btn {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Estilo base del texto descriptivo */
+.servicio-desc {
+  color: #333; /* gris oscuro por defecto */
+  transition: color 0.3s ease;
+}
+
+/* Cuando el cuadro está en hover, que el texto sea más claro */
+.servicio-card:hover .servicio-desc {
+  color: #c7c5c5; /* gris claro, puedes usar #f0f0f0 o #fff si quieres blanco */
+}
+
+.valor-card {
+  transition: transform 0.3s ease;
+}
+
+.valor-card:hover {
+  transform: scale(1.10);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.173);
+}
+
+/*Iconos animados*/
+.icono-animado {
+  font-size: 2rem;
+  color: rgba(255, 115, 0, 0.853);
+  animation: flotar 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(0); opacity: 0.6; }
+  50%  { transform: translateY(-15px); opacity: 0.3; }
+  100% { transform: translateY(0); opacity: 0.6; }
+}
+
+
+
