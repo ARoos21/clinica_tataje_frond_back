@@ -21,32 +21,51 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  // Corregimos el DTO y la desestructuración del login
-  async loginPersonal(dtoLogin: LoginPersonalClinicoDto) {
-    const { email, password } = dtoLogin;
+async loginPersonal(dtoLogin: LoginPersonalClinicoDto) {
+  const email = String(dtoLogin.email ?? '').trim().toLowerCase();
+  const password = String(dtoLogin.password ?? '');
 
-    // Buscar el usuario por el correo
-    const user = await this.personalRepo.findOne({ where: { email } });
+  // 🔥 IMPORTANTE: incluir el campo password en el select
+  const user = await this.personalRepo.findOne({
+    
+    where: { email },
+    select: {
+      id_personal: true,
+      nombres: true,
+      rol: true,
+      email: true,
+      password: true, // ← sin esto no se compara nada
+    },
+  });
+console.log('=== LOGIN PERSONAL ===');
+console.log('Email recibido:', email);
+console.log('Password recibido:', password);
+console.log('Usuario encontrado:', user);
 
-    if (!user || !(await bcrypt.compare(password, user.password))) {
-      throw new UnauthorizedException('Credenciales inválidas');
-    }
 
-    const payload = {
-      sub: user.id_personal,
-      name: user.nombres,
-      rol: user.rol,
-    };
-
-    // Obtenemos la expiración desde el entorno o se asigna un valor predeterminado
-    const expiresIn = process.env.JWT_EXPIRES_IN; // Usamos un valor por defecto '1h' si no está definido en .env
-    const token = this.jwtService.sign(payload, { expiresIn });
-    return {
-      access_token: token,
-      token_expiration: new Date(Date.now() + ms(expiresIn)).toISOString(), // Si deseas mostrar la expiración exacta
-    };
+  if (!user) {
+    throw new UnauthorizedException('Credenciales inválidas (usuario no encontrado)');
   }
 
+  const ok = await bcrypt.compare(password, user.password);
+console.log('Hash en base de datos:', user.password);
+console.log('Resultado de bcrypt.compare():', ok);
+
+  if (!ok) {
+    throw new UnauthorizedException('Credenciales inválidas (contraseña incorrecta)');
+  }
+
+  const payload = { sub: user.id_personal, name: user.nombres, rol: user.rol };
+  const expiresIn = process.env.JWT_EXPIRES_IN ?? '1h';
+  const token = this.jwtService.sign(payload, { expiresIn });
+
+  const decoded: any = this.jwtService.decode(token);
+  const token_expiration = decoded?.exp
+    ? new Date(decoded.exp * 1000).toISOString()
+    : undefined;
+
+  return { access_token: token, token_expiration };
+}
   // Para el login de pacientes, seguimos la misma estructura
   async loginPaciente(dtoLogin: LoginPacienteDto) {
   const { dni, password } = dtoLogin;

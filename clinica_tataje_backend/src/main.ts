@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: ['http://localhost:5173', 'null'],
+    origin: '*',
     credentials: true,
     allowedHeaders: ['Content-Type', 'Authorization'],
     methods: ['GET','POST','PATCH','PUT','DELETE','OPTIONS'],
@@ -22,11 +22,10 @@ async function bootstrap() {
     .addBearerAuth()
     .build();
 
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('documentacion', app, document);
-
   const port = Number(process.env.PORT) || 3030;
-  await app.listen(port, '0.0.0.0');
-  console.log(`🚀 API corriendo en http://0.0.0.0:${port}`);
+// antes: await app.listen(port, '0.0.0.0');
+await app.listen(port, '0.0.0.0');
+
+console.log(`🚀 API corriendo en http://127.0.0.1:${port}`);
 }
 bootstrap();
